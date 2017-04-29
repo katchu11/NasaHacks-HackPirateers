@@ -1,0 +1,277 @@
+USE mysql;
+
+-- DROP TABLE tblUniq;
+-- --
+-- create TABLE  tblUniq(
+-- UNCode int(20),
+-- CountryName char(50),
+-- iiasa char(50),
+-- sref char(50),
+-- y1990 int(20),
+-- y1995 int(20),
+-- y2000 int(20),
+-- y2005 int(20),
+-- y2010 int(20),
+-- y2015 int(20),
+-- y2020 int(20),
+-- y2025 int(20),
+-- y2030 int(20),
+-- y2035 int(20),
+-- y2040 int(20),
+-- y2045 int(20),
+-- y2050 int(20),
+-- y2055 int(20),
+-- y2060 int(20),
+-- y2065 int(20),
+-- y2070 int(20),
+-- y2075 int(20),
+-- y2080 int(20),
+-- y2085 int(20),
+-- y2090 int(20),
+-- y2095 int(20),
+-- y2100 int(20)
+-- --
+-- --
+-- );
+ -- drop table density;
+-- create TABLE  density(
+-- 
+-- CountryName char(50),
+-- UNCode char(20),
+-- indiname char(50),
+-- indicode char(20),
+-- y1990 int(20),
+-- y1995 int(20),
+-- y2000 int(20),
+-- y2005 int(20),
+-- y2010 int(20),
+-- y2015 int(20),
+-- y2020 int(20),
+-- y2025 int(20),
+-- y2030 int(20),
+-- y2035 int(20),
+-- y2040 int(20),
+-- y2045 int(20),
+-- y2050 int(20),
+-- y2055 int(20),
+-- y2060 int(20),
+-- y2065 int(20),
+-- y2070 int(20),
+-- y2075 int(20),
+-- y2080 int(20),
+-- y2085 int(20),
+-- y2090 int(20),
+-- y2095 int(20),
+-- y2110 int(20),
+-- y2145 int(21),
+-- y2151 int(21),
+-- y2155 int(21),
+-- y2161 int(21),
+-- y2165 int(21),
+-- y2171 int(21),
+-- y2175 int(21),
+-- y2181 int(21),
+-- y2185 int(21),
+-- y2191 int(21),
+-- y2195 int(21),
+-- y2111 int(21),
+-- y2245 int(22),
+-- y2252 int(22),
+-- y2255 int(22),
+-- y2262 int(22),
+-- y2265 int(22),
+-- y2272 int(22),
+-- y2275 int(22),
+-- y2282 int(22),
+-- y2285 int(22),
+-- y2292 int(22),
+-- y2295 int(22),
+-- y2222 int(22),
+-- y3085 int(30),
+-- y3090 int(30),
+-- y3095 int(30),
+-- y3110 int(30),
+-- y3145 int(31),
+-- y3151 int(31),
+-- y3155 int(31),
+-- y3161 int(31),
+-- y3165 int(31)
+-- 
+-- );
+--
+-- drop table ethnic;
+-- create TABLE ethnic(
+-- Location char(50),
+-- White char(50),
+-- Black char(50),
+-- Hispanic char(50),
+-- Asian char(50),
+-- American_Indian_or_Alaska_Native char(50),
+-- Native_Hawaiian_or_Other_Pacific_Islander char(50),
+-- Two_Or_More_Races char(50),
+-- Total char(50)
+-- );
+/*SHOW TABLES;
+SELECT * FROM EDUPRO;
+INSERT INTO EDUPRO values('1' , 1, 1.1);
+delete FROM EDUPRO ;
+COMMIT;
+SELECT * FROM EDUPRO;*/
+drop table wolfram2;
+CREATE TABLE wolfram2 (
+  circumstance char(20) ,
+  male char(50),
+  female char(50),
+  everyone char(50)
+ 
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+                                                                                                        
+                                                                                                        
+                                                                                                        /*
+INSERT INTO employees (id, name, location) VALUES
+(1, 'Jasmine', 'Australia'),
+(2, 'Jay', 'India'),
+(3, 'Jim', 'Germany'),
+(4, 'Lesley', 'Scotland');*/
+
+-- SELECT * FROM employees;
+-- delete FROM tblUniq;
+-- LOAD DATA LOCAL INFILE '/Users/KrishnanRam/Downloads/Table1.csv' INTO TABLE test12 FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 2 LINES;
+-- --- - LOAD DATA LOCAL INFILE '/Users/KrishnanRam/Downloads/ethnicdata.csv'
+-- -- -- INTO TABLE ethnic
+-- -- -- FIELDS TERMINATED BY ','
+-- -- --     ENCLOSED BY '"'
+-- -- -- LINES TERMINATED BY '\n'
+-- -- -- IGNORE 2 LINES;
+-- -- 
+
+LOAD DATA LOCAL INFILE '/Users/KrishnanRam/Documents/workspace/dsp/myfile2.txt'
+INTO TABLE wolfram2
+FIELDS TERMINATED BY '|'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+-- CREATE TABLE neighbors_states (
+--     `StateCode` VARCHAR(2) CHARACTER SET utf8,
+--     `NeighborStateCode` VARCHAR(2) CHARACTER SET utf8
+-- );
+-- INSERT INTO neighbors_states VALUES ('AK','WA');
+-- INSERT INTO neighbors_states VALUES ('AL','FL');
+-- INSERT INTO neighbors_states VALUES ('AL','GA');
+-- INSERT INTO neighbors_states VALUES ('AL','MS');
+-- INSERT INTO neighbors_states VALUES ('AL','TN');
+-- INSERT INTO neighbors_states VALUES ('AR','LA');
+-- INSERT INTO neighbors_states VALUES ('AR','MO');
+-- INSERT INTO neighbors_states VALUES ('AR','MS');
+-- INSERT INTO neighbors_states VALUES ('AR','OK');
+-- INSERT INTO neighbors_states VALUES ('AR','TN');
+-- INSERT INTO neighbors_states VALUES ('AR','TX');
+-- INSERT INTO neighbors_states VALUES ('AZ','CA');
+-- INSERT INTO neighbors_states VALUES ('AZ','CO');
+-- INSERT INTO neighbors_states VALUES ('AZ','NM');
+-- INSERT INTO neighbors_states VALUES ('AZ','NV');
+-- INSERT INTO neighbors_states VALUES ('AZ','UT');
+-- INSERT INTO neighbors_states VALUES ('CA','HI');
+-- INSERT INTO neighbors_states VALUES ('CA','NV');
+-- INSERT INTO neighbors_states VALUES ('CA','OR');
+-- INSERT INTO neighbors_states VALUES ('CO','KS');
+-- INSERT INTO neighbors_states VALUES ('CO','NE');
+-- INSERT INTO neighbors_states VALUES ('CO','NM');
+-- INSERT INTO neighbors_states VALUES ('CO','OK');
+-- INSERT INTO neighbors_states VALUES ('CO','UT');
+-- INSERT INTO neighbors_states VALUES ('CO','WY');
+-- INSERT INTO neighbors_states VALUES ('CT','MA');
+-- INSERT INTO neighbors_states VALUES ('CT','NY');
+-- INSERT INTO neighbors_states VALUES ('CT','RI');
+-- INSERT INTO neighbors_states VALUES ('DC','MD');
+-- INSERT INTO neighbors_states VALUES ('DC','VA');
+-- INSERT INTO neighbors_states VALUES ('DE','MD');
+-- INSERT INTO neighbors_states VALUES ('DE','NJ');
+-- INSERT INTO neighbors_states VALUES ('DE','PA');
+-- INSERT INTO neighbors_states VALUES ('FL','GA');
+-- INSERT INTO neighbors_states VALUES ('GA','NC');
+-- INSERT INTO neighbors_states VALUES ('GA','SC');
+-- INSERT INTO neighbors_states VALUES ('GA','TN');
+-- INSERT INTO neighbors_states VALUES ('IA','IL');
+-- INSERT INTO neighbors_states VALUES ('IA','MN');
+-- INSERT INTO neighbors_states VALUES ('IA','MO');
+-- INSERT INTO neighbors_states VALUES ('IA','NE');
+-- INSERT INTO neighbors_states VALUES ('IA','SD');
+-- INSERT INTO neighbors_states VALUES ('IA','WI');
+-- INSERT INTO neighbors_states VALUES ('ID','MT');
+-- INSERT INTO neighbors_states VALUES ('ID','NV');
+-- INSERT INTO neighbors_states VALUES ('ID','OR');
+-- INSERT INTO neighbors_states VALUES ('ID','UT');
+-- INSERT INTO neighbors_states VALUES ('ID','WA');
+-- INSERT INTO neighbors_states VALUES ('ID','WY');
+-- INSERT INTO neighbors_states VALUES ('IL','IN');
+-- INSERT INTO neighbors_states VALUES ('IL','KY');
+-- INSERT INTO neighbors_states VALUES ('IL','MO');
+-- INSERT INTO neighbors_states VALUES ('IL','WI');
+-- INSERT INTO neighbors_states VALUES ('IN','KY');
+-- INSERT INTO neighbors_states VALUES ('IN','MI');
+-- INSERT INTO neighbors_states VALUES ('IN','OH');
+-- INSERT INTO neighbors_states VALUES ('KS','MO');
+-- INSERT INTO neighbors_states VALUES ('KS','NE');
+-- INSERT INTO neighbors_states VALUES ('KS','OK');
+-- INSERT INTO neighbors_states VALUES ('KY','MO');
+-- INSERT INTO neighbors_states VALUES ('KY','OH');
+-- INSERT INTO neighbors_states VALUES ('KY','TN');
+-- INSERT INTO neighbors_states VALUES ('KY','VA');
+-- INSERT INTO neighbors_states VALUES ('KY','WV');
+-- INSERT INTO neighbors_states VALUES ('LA','MS');
+-- INSERT INTO neighbors_states VALUES ('LA','TX');
+-- INSERT INTO neighbors_states VALUES ('MA','NH');
+-- INSERT INTO neighbors_states VALUES ('MA','NY');
+-- INSERT INTO neighbors_states VALUES ('MA','RI');
+-- INSERT INTO neighbors_states VALUES ('MA','VT');
+-- INSERT INTO neighbors_states VALUES ('MD','PA');
+-- INSERT INTO neighbors_states VALUES ('MD','VA');
+-- INSERT INTO neighbors_states VALUES ('MD','WV');
+-- INSERT INTO neighbors_states VALUES ('ME','NH');
+-- INSERT INTO neighbors_states VALUES ('MI','OH');
+-- INSERT INTO neighbors_states VALUES ('MI','WI');
+-- INSERT INTO neighbors_states VALUES ('MN','ND');
+-- INSERT INTO neighbors_states VALUES ('MN','SD');
+-- INSERT INTO neighbors_states VALUES ('MN','WI');
+-- INSERT INTO neighbors_states VALUES ('MO','NE');
+-- INSERT INTO neighbors_states VALUES ('MO','OK');
+-- INSERT INTO neighbors_states VALUES ('MO','TN');
+-- INSERT INTO neighbors_states VALUES ('MS','TN');
+-- INSERT INTO neighbors_states VALUES ('MT','ND');
+-- INSERT INTO neighbors_states VALUES ('MT','SD');
+-- INSERT INTO neighbors_states VALUES ('MT','WY');
+-- INSERT INTO neighbors_states VALUES ('NC','SC');
+-- INSERT INTO neighbors_states VALUES ('NC','TN');
+-- INSERT INTO neighbors_states VALUES ('NC','VA');
+-- INSERT INTO neighbors_states VALUES ('ND','SD');
+-- INSERT INTO neighbors_states VALUES ('NE','SD');
+-- INSERT INTO neighbors_states VALUES ('NE','WY');
+-- INSERT INTO neighbors_states VALUES ('NH','VT');
+-- INSERT INTO neighbors_states VALUES ('NJ','NY');
+-- INSERT INTO neighbors_states VALUES ('NJ','PA');
+-- INSERT INTO neighbors_states VALUES ('NM','OK');
+-- INSERT INTO neighbors_states VALUES ('NM','TX');
+-- INSERT INTO neighbors_states VALUES ('NM','UT');
+-- INSERT INTO neighbors_states VALUES ('NV','OR');
+-- INSERT INTO neighbors_states VALUES ('NV','UT');
+-- INSERT INTO neighbors_states VALUES ('NY','PA');
+-- INSERT INTO neighbors_states VALUES ('NY','VT');
+-- INSERT INTO neighbors_states VALUES ('OH','PA');
+-- INSERT INTO neighbors_states VALUES ('OH','WV');
+-- INSERT INTO neighbors_states VALUES ('OK','TX');
+-- INSERT INTO neighbors_states VALUES ('OR','WA');
+-- INSERT INTO neighbors_states VALUES ('PA','WV');
+-- INSERT INTO neighbors_states VALUES ('SD','WY');
+-- INSERT INTO neighbors_states VALUES ('TN','VA');
+-- INSERT INTO neighbors_states VALUES ('UT','WY');
+-- INSERT INTO neighbors_states VALUES ('VA','WV');
+
+-- SHOW VARIABLES LIKE 'secure_file_priv';
+
+select * from density;
+select * from tblUniq;
+select * from wolfram1;
+select * from wolfram2;
+select * from ethnic;
+select * from neighbors_states;
