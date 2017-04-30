@@ -1,0 +1,60 @@
+var mysql = require("mysql");
+
+// First you need to create a connection to the db
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "MyNewPass",
+  database: "mysql"
+});
+
+con.connect(function(err){
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+});
+
+con.query('SELECT * FROM employees',function(err,rows){
+	  if(err) {
+		  throw err
+	  }
+
+	  console.log('Data received from Db:\n');
+	  console.log(rows);
+	  let array1 = Array.from(rows);
+	  console.log(array1[1].ids.toString());
+	  var http = require("http");
+
+	  http.createServer(function(request, response) {
+	    response.writeHead(200, {"Content-Type": "text/html"});
+	    for (i=0; i<rows.length; i++)
+	    {
+	    	 response.write("<html>" 
+	 	    		+ "<body>" 
+	 	    		+ "<h1>ID |    Name  </h1>" 
+	 	    		+ array1[i].ids.toString()
+	 	    		+ " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
+	 	       		+ array1[i].name.toString() 
+	 	    		+ "</body>" 
+	 	    		+ "</html>");
+	    }
+	   /* response.write("<html>" 
+	    		+ "<body>" 
+	    		+ "<h1>ID |    Name  </h1>" 
+	    		+ array1[1].id.toString()
+	    		+ " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
+	       		+ array1[1].name.toString() 
+	    		+ "</body>" 
+	    		+ "</html>");*/
+	   // response.write(array1[1].id.toString());
+	    response.end();
+	  }).listen(1330);
+	});
+
+con.end(function(err) {
+  // The connection is terminated gracefully
+  // Ensures all previously enqueued queries are still
+  // before sending a COM_QUIT packet to the MySQL server.
+});
