@@ -1,0 +1,54 @@
+import pymysql
+from pyspark import SparkConf, SparkContext
+from pyspark.sql import SQLContext
+
+gender = raw_input("gender: ")
+race = raw_input("race: ")
+age = 23
+location = raw_input("location: ")
+
+connection = pymysql.Connect(host='localhost',user='root',password='MyNewPass',db='mysql',charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+cursor = connection.cursor()
+#query = "LOAD DATA INFILE '/tmp/myfile1.txt ' INTO TABLE wolfram FIELDS TERMINATED BY '|' ENCLOSED BY '' ESCAPED BY '\n'"
+query = "SELECT pop_est_2014 FROM census_state_populations WHERE state = '%s' "  % (location)
+
+x = 0
+
+cursor.execute( query )
+result = cursor.fetchone()
+print result
+print result.values()
+x = result.values()[0]
+print x
+connection.commit()
+    #print x
+
+y = ""
+
+query = "SELECT %s FROM ethnic WHERE location = '%s' "  % (race,location)
+cursor.execute( query )
+result = cursor.fetchone()
+y = result.values()[0]
+print y
+y = float(y)
+print y
+connection.commit()
+
+f = x * y 
+print f
+
+
+z = ""
+query = "SELECT %s FROM wolfram_acute WHERE circumstance = '%s' "  % (gender,race)
+cursor.execute( query )
+result = cursor.fetchone()
+z = result.values()[0]
+z = float(z)
+print z
+z = z/100
+print z
+
+connection.commit()
+
+g = z * f
+print g  
