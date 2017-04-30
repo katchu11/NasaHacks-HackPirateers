@@ -3,6 +3,7 @@ Created on Apr 29, 2017
 
 @author: Kashyap
 '''
+from __future__ import division
 import pymysql
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SQLContext
@@ -41,6 +42,16 @@ connection.commit()
 f = x * y 
 print f
 
+d = ""
+query = "SELECT Column_2010_DENSITY FROM population_density_state WHERE STATE_OR_REGION = '%s' "  % (location)
+cursor.execute( query )
+result = cursor.fetchone()
+d = result.values()[0]
+d = float(d)
+connection.commit()
+#Print amount of race in state
+
+
 
 z = ""
 #Percent of acute conjunctivitis for gender and race 
@@ -60,7 +71,11 @@ connection.commit()
 g = z * f
 print g  
 disease = "acute conjunctivitis"
-cursor.execute (" INSERT INTO Data_Output (Circumstance,Gender,Race,State,Output) VALUES (%s,%s,%s,%s,%s) ", (disease, gender, race, location, g))
+
+#d = float(d)
+print repr(d)
+percent_rate = (g/d)/100
+
+cursor.execute (" INSERT INTO Data_Output (Circumstance,Gender,Race,State,Output,Output_Percentage_For_Original_State) VALUES (%s,%s,%s,%s,%s,%s) ", (disease, gender, race, location, g,percent_rate))
 connection.commit()
-print cursor.execute("select * from data_output")
 connection.close()
